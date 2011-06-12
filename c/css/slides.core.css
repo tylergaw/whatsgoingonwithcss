@@ -1,0 +1,588 @@
+/*---------------------------------------------- General ---------------------------------------------*/
+* { margin: 0px; padding: 0px; }
+hr { display: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+section { display: block; }
+
+.transport-control
+{
+	display: block;
+	position: absolute;
+	z-index: 999;
+	width: 75px;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.05) url(../images/transport_control_prev.png) no-repeat center center;
+	cursor: pointer;
+	text-indent: -300em;
+	opacity: 0;
+}
+
+	.transport-control:hover
+	{
+		opacity: 1;
+	}
+
+	#prev
+	{
+		border-right: 1px solid rgba(53, 53, 53, 0.15);
+		left: 0;
+	}
+	
+	#next
+	{
+		border-left: 1px solid rgba(53, 53, 53, 0.15);
+		right: 0;
+		background-image: url(../images/transport_control_next.png);
+	}
+	
+/*----------------------------------------------- Type -----------------------------------------------*/
+
+@font-face 
+{
+	font-family: 'LeagueGothicRegular';
+	src: url('../fonts/League_Gothic-webfont.ttf') format('truetype'), url('../fonts/League_Gothic-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'JustusRoman';
+	src: url('../fonts/Justus-Roman-webfont.ttf') format('truetype'), url('../fonts/Justus-Roman-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*---------------------------------------------- Slides ----------------------------------------------*/
+
+html
+{
+	height: 100%;
+}
+
+body
+{
+	font-family: helvetica, arial, 'liberation sans', sans-serif;
+	font-size: medium;
+	height: 100%;
+	min-width: 960px;
+}
+
+h1, h2
+{
+	font-family: 'LeagueGothicRegular';
+	font-weight: normal;
+	font-size: 208px;
+	color: #f8f8f8;
+	text-shadow: #000 1px 1px 2px;
+}
+
+	h2
+	{
+		text-align: right;
+		font-size: 118px;
+	}
+	
+h3
+{
+	font-family: 'JustusRoman';
+	font-weight: normal;
+	font-size: 50px;
+	color: #fff;
+	width: 784px;
+	text-align: right;
+	text-shadow: #232323 1px 1px 1px;
+	float: right;
+}
+
+.slide
+{
+	display: none;
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	height: 100%;
+	min-width: 960px;
+	
+	background-repeat: no-repeat, 
+					   repeat-x, 
+					   repeat;
+
+	background-position: 90% -30px, 
+						 left 111px, 
+						 left top;
+}
+
+	.slide.active
+	{
+		display: block;
+	}
+	
+	.slide .content
+	{
+		width: 960px;
+		margin: 0 auto;
+		padding: 10px 0;
+		color: #fefefe;
+		font-weight: bold;
+	}
+
+/*------------------------------------------- Intro Slide --------------------------------------------*/
+
+.intro, .outro
+{
+	background-color: #e9e5d3;
+	background-image: url(../images/page_right_spotlight.png), url(../images/intro_banner_bg.png), url(../images/intro_bg.jpg);
+	background-repeat: no-repeat, repeat-x, repeat;
+	background-position: 80% top, left 380px, left top;
+}
+	
+	.intro .content
+	{
+		overflow: hidden;
+		padding-top: 50px;
+		background: transparent url(../images/intro_graphic.png) no-repeat left 160px;
+	}
+	
+	.intro h1
+	{
+		width: 960px;
+		height: 234px;
+		overflow: hidden;
+		text-indent: -3000em;
+		background: transparent url(../images/branding.png) no-repeat center top;
+	}
+	
+	.intro div div
+	{
+		padding-top: 15px;
+		width: 462px;
+		float: right;
+		color: #353535;
+	}
+	
+	.intro h3
+	{
+		font-size: 37px;
+		line-height: 1.3em;
+		padding-bottom: 22px;
+
+		color: #353535;
+		width: auto;
+		text-align: left;
+		text-shadow: none;
+		float: none;
+	}
+	
+	.intro a
+	{
+		color: #5e063f;
+		text-decoration: none;
+	}
+	
+		.intro a:hover
+		{
+			color: #e9e5d3;
+			background-color: #5e063f;
+		}
+	
+	.intro ul
+	{
+		border-top: 1px dashed #d5c99b;
+		border-bottom: 1px dashed #d5c99b;
+		padding: 22px 5px 22px 5px;
+		margin-bottom: 40px;
+		background-color: rgba(216, 205, 160, 0.1);
+	}
+	
+		.intro ul li
+		{
+			font-size: 20px;
+			font-weight: bold;
+			display: inline-block;
+			padding-right: 34px;
+			background: transparent url(../images/intro_bullet.gif) no-repeat 91% center;
+		}
+		
+		.intro ul li:last-child
+		{
+			padding-right: 0px;
+			background-image: none;
+		}
+		
+	.intro p
+	{
+		text-align: center;
+		font-size: 14px;
+		font-style: italic;
+		font-weight: normal;
+		color: #6e6e6e;
+	}
+	
+	.intro p strong
+	{
+		vertical-align: middle;
+		display: inline-block;
+		width: 30px;
+		height: 31px;
+		overflow: hidden;
+		text-indent: -30em;
+		background: transparent url(../images/intro_keys_sprite.png) no-repeat left top;
+	}
+	
+		.intro p strong:nth-of-type(2)
+		{
+			background-position: right top;
+		}
+	
+	.outro
+	{
+		background-position: 80% top, left 220px, left top;
+	}
+	
+	.outro h1
+	{
+		position: relative;
+		top: 80px;
+		color: #350422;
+		text-align: center;
+		text-shadow: none;
+		font-size: 190px;
+	}
+		
+/*--------------------------------------------- Selectors --------------------------------------------*/
+
+.selectors
+{
+	background-color: #6a1414;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg.png), 
+					  url(../images/selectors_bg.jpg);
+}
+
+	.selectors h2
+	{
+		background: transparent url(../images/selectors_header_graphic.png) no-repeat 455px 25px;
+	}
+
+	.selectors.title
+	{
+		background-position: 10% top, 
+							 left 195px, 
+							 left top;
+	}
+	
+		.selectors.title h1
+		{
+			background: transparent url(../images/selectors_title_header_graphic.png) no-repeat 440px 65px;
+		}
+	
+	
+	.selectors #selectors-overview.content ul
+	{
+		line-height: 1.6em;
+		display: inline-block;
+		width: 410px;
+		padding-left: 17px;
+		font-size: 36px;
+		text-shadow: rgba(0, 0, 0, 0.79) 1px 1px 1px;
+	}
+	
+		.selectors #selectors-overview.content ul li
+		{
+			padding-left: 17px;
+			list-style: none outside;
+			background: transparent url(../images/selectors_bullet.gif) no-repeat left center;
+		}
+		
+
+/*---------------------------------------------- Text ------------------------------------------------*/
+
+.text
+{
+	background-color: #62320b;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg.png), 
+					  url(../images/text_bg.jpg);
+}
+
+	.text h2
+	{
+		background: transparent url(../images/text_header_graphic.png) no-repeat 700px 5px;
+	}
+
+.text.title
+{	
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.text.title h1
+	{
+		background: transparent url(../images/text_title_header_graphic.png) no-repeat 210px 15px;
+	}
+	
+/*---------------------------------------------- Staples ---------------------------------------------*/
+
+.staples
+{
+	background-color: #180f17;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg.png), 
+					  url(../images/staples_bg.jpg);
+}
+
+	.staples h2
+	{
+		background: transparent url(../images/staples_header_graphic.png) no-repeat 480px 22px;
+	}
+
+.staples.title
+{	
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.staples.title h1
+	{
+		background: transparent url(../images/staples_title_header_graphic.png) no-repeat 350px 55px;
+	}
+	
+/*---------------------------------------------- Transitions -----------------------------------------*/
+
+.transitions
+{
+	background-color: #07668e;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg.png), 
+					  url(../images/transitions_bg.jpg);
+}
+
+	.transitions h2
+	{
+		background: transparent url(../images/transitions_header_graphic.png) no-repeat 485px 3px;
+	}
+
+.transitions.title
+{
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.transitions.title h1
+	{
+		background: transparent url(../images/transitions_title_header_graphic.png) no-repeat 610px 5px;
+	}
+	
+/*----------------------------------------------- Animations -----------------------------------------*/
+
+.animations
+{
+	background-color: #246f6b;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg.png), 
+					  url(../images/animations_bg.jpg);
+}
+
+	.animations h2
+	{
+		background: transparent url(../images/animations_header_graphic.png) no-repeat 450px 8px;
+	}
+
+.animations.title
+{
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.animations.title h1
+	{
+		background: transparent url(../images/animations_title_header_graphic.png) no-repeat 585px 30px;
+	}
+	
+/*----------------------------------------------- Transforms -----------------------------------------*/
+
+.transforms
+{
+	background-color: #412a54;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg.png), 
+					  url(../images/transforms_bg.jpg);
+}
+
+	.transforms h2
+	{
+		background: transparent url(../images/transforms_header_graphic.png) no-repeat 530px 20px;
+	}
+
+.transforms.title
+{
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.transforms.title h1
+	{
+		background: transparent url(../images/transforms_title_header_graphic.png) no-repeat 640px 50px;
+	}
+	
+/*--------------------------------------------- Media Queries ----------------------------------------*/
+
+.media-queries
+{
+	background-color: #191919;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg.png), 
+					  url(../images/media_queries_bg.jpg);
+}
+
+	.media-queries h2
+	{
+		background: transparent url(../images/media_queries_header_graphic.png) no-repeat 365px 5px;
+	}
+
+.media-queries.title
+{
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.media-queries.title h1
+	{
+		background: transparent url(../images/media_queries_title_header_graphic.png) no-repeat 665px 10px;
+	}
+	
+/*--------------------------------------------- In Action --------------------------------------------*/
+
+.in-action
+{
+	background-color: #f2f1e7;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg_dark.png), 
+					  url(../images/in_action_bg.jpg);
+}
+
+	.in-action h2
+	{
+		text-shadow: none;
+		color: #423321;
+		background: transparent url(../images/in_action_header_graphic.png) no-repeat 560px 2px;
+	}
+
+.in-action.title
+{
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.in-action.title h1
+	{
+		text-shadow: none;
+		color: #423321;
+		background: transparent url(../images/in_action_title_header_graphic.png) no-repeat 480px 0px;
+	}
+	
+	.in-action h3
+	{
+		text-shadow: none;
+		color: #423321;
+	}
+	
+/*------------------------------------------------ Browsers-------------------------------------------*/
+
+.browsers
+{
+	background-color: #e5bc17;
+	background-image: url(../images/page_spotlight_dark.png), 
+					  url(../images/slide_title_border_bg_dark.png), 
+					  url(../images/browsers_bg.jpg);
+}
+
+	.browsers h2
+	{
+		text-shadow: none;
+		color: #1d1d1d;
+		background: transparent url(../images/browsers_header_graphic.png) no-repeat 490px 35px;
+	}
+
+.browsers.title
+{	
+	background-position: 10% top, 
+						 left 195px, 
+						 left top;
+}
+
+	.browsers.title h1
+	{
+		text-shadow: none;
+		color: #1d1d1d;
+		background: transparent url(../images/browsers_title_header_graphic.png) no-repeat 540px 50px;
+	}
+	
+	.browsers h3
+	{
+		text-shadow: none;
+		color: #1d1d1d;
+	}
+	
+	#browsers-chart
+	{
+		position: relative;
+		display: block;
+		width: 948px;
+		height: 613px;
+		background: transparent url(../images/browsers_chart.gif) no-repeat top center;
+		text-decoration: none;
+		font-size: 38px;
+		color: #e9c638;
+		opacity: 0.98;
+	}
+		
+		#browsers-chart:hover
+		{
+			opacity: 1;
+		}
+		
+		#browsers-chart strong
+		{
+			position: absolute;
+			bottom: 18px;
+			left: 18px;
+		}
+		
+	.browsers blockquote p
+	{
+		padding: 60px 0 0 87px;
+		font-family: 'JustusRoman';
+		font-weight: normal;
+		font-size: 48px;
+		color: #1d1d1e;
+		width: 713px;
+	}
+
+/*------------------------------------------------ @media --------------------------------------------*/
+
+@media only screen and (max-device-width: 480px)
+{
+	h1
+	{
+		font-size: 140px;
+	}
+	
+	h2
+	{
+		font-size: 90px;
+	}
+	
+	a.transport-control
+	{
+		opacity: 1;
+		width: 60px;
+	}
+}
