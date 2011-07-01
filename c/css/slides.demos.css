@@ -71,7 +71,7 @@ div.code-sample
 
 	div.code-sample.dawn
 	{
-		background-color: #fff;
+		background-color: #f1f1f1;
 		color: #080808;
 	}
 	
@@ -145,17 +145,11 @@ div.demo
 	border-right: 1px solid rgba(255, 255, 255, 0.1);
 	padding: 9px;
 	
-	background-image: -webkit-gradient(linear, left bottom, left top,
-								color-stop(1, rgb(25, 25, 25)),
-	    						color-stop(0.5, rgb(25, 25, 25)),
-	    						color-stop(0.05, rgb(6, 6, 6)));
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(25, 25, 25, 1)), 
+									color-stop(0.5, rgba(25, 25, 25, 1)), color-stop(0.05, rgba(6, 6, 6, 1)));
 	
-	background-image: -moz-linear-gradient(top,
-	    						rgb(25, 25, 25) 100%,
-	    						rgb(25, 25, 25) 50%,
-	    						rgb(6, 6, 6) 5%);
-	
-	background-color: rgb(25, 25, 25);
+	background-image: -moz-linear-gradient(top, rgba(25, 25, 25, 1), rgba(25, 25, 25, 1), rgba(6, 6, 6, 1));
+	background-color: rgba(25, 25, 25, 1);
 }
 
 /*--------------------------------------------- Selector Demos ---------------------------------------*/
